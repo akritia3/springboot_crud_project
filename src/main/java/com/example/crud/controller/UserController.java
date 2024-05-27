@@ -37,4 +37,15 @@ public class UserController {
     public String deleteUser(@PathVariable("id") Long id) {
         return userService.deleteUser(id);
     }
+
+    @PutMapping("/user/address/{id}")
+    public User updateAddress(@PathVariable Long id, @RequestBody String address) {
+        return userService.updateAddress(id, address);
+    }
+
+    @PutMapping("/user/phone/{id}")
+    public User updatePhoneNumber(@PathVariable Long id, @RequestBody String phoneNumber) {
+        return userService.updatePhoneNumber(id, phoneNumber);
+    }
 }
+
